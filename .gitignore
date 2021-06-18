@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/PasswordChecker/PasswordChecker/.vs/PasswordChecker
+/PasswordChecker/PasswordChecker/PasswordChecker/bin
+/PasswordChecker/PasswordChecker/PasswordChecker/obj
