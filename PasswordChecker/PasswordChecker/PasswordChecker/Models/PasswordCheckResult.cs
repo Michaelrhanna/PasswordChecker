@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+using static PasswordChecker.Models.Constants;
 
 namespace PasswordChecker.Models
 {
     public class PasswordCheckResult
     {
-        public string PasswordStrength { get; set; }
+        public PasswordStrength PasswordStrength { get; set; }
         public string Message { get; set; }
     }
 }

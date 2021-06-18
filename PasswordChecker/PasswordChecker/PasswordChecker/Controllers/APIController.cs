@@ -22,6 +22,8 @@ namespace PasswordChecker.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public PasswordCheckResult CheckPassword(string password)
         {
             PasswordCheckResult passwordCheckResult = new PasswordCheckResult();
