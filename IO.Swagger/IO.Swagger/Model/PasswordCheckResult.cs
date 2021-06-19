@@ -34,10 +34,12 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="passwordStrength">passwordStrength.</param>
         /// <param name="message">message.</param>
-        public PasswordCheckResult(PasswordStrength passwordStrength = default(PasswordStrength), string message = default(string))
+        /// <param name="breachCount">breachCount.</param>
+        public PasswordCheckResult(PasswordStrength passwordStrength = default(PasswordStrength), string message = default(string), int? breachCount = default(int?))
         {
             this.PasswordStrength = passwordStrength;
             this.Message = message;
+            this.BreachCount = breachCount;
         }
         
         /// <summary>
@@ -53,6 +55,12 @@ namespace IO.Swagger.Model
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or Sets BreachCount
+        /// </summary>
+        [DataMember(Name="breachCount", EmitDefaultValue=false)]
+        public int? BreachCount { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -62,6 +70,7 @@ namespace IO.Swagger.Model
             sb.Append("class PasswordCheckResult {\n");
             sb.Append("  PasswordStrength: ").Append(PasswordStrength).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  BreachCount: ").Append(BreachCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +114,11 @@ namespace IO.Swagger.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.BreachCount == input.BreachCount ||
+                    (this.BreachCount != null &&
+                    this.BreachCount.Equals(input.BreachCount))
                 );
         }
 
@@ -121,6 +135,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.PasswordStrength.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.BreachCount != null)
+                    hashCode = hashCode * 59 + this.BreachCount.GetHashCode();
                 return hashCode;
             }
         }

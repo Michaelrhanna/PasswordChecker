@@ -7,5 +7,6 @@ namespace PasswordChecker.Models
     {
         public PasswordStrength PasswordStrength { get; set; }
         public string Message { get; set; }
+        public int BreachCount { get; set; }
     }
 }

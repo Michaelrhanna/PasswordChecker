@@ -104,6 +104,14 @@ namespace PasswordCheckerClient
                     
                 }
 
+                if(result.BreachCount.HasValue)
+                {
+                    if ( result.BreachCount > 0)
+                        Console.WriteLine($"Password has been breached {result.BreachCount} time(s) >");
+                    else
+                        Console.WriteLine($"Password has not been breached yet >");
+                }
+
             }
             catch (Exception ex)
             {

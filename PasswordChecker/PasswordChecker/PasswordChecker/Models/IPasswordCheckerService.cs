@@ -8,5 +8,6 @@ namespace PasswordChecker.Models
     public interface IPasswordCheckerService
     {
         PasswordCheckResult CheckPassword(string password);
+        int CheckPwnedPassword(string password);
     }
 }
