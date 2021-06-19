@@ -28,7 +28,19 @@ namespace PasswordChecker
         {
             services.AddControllers();
             services.AddMvc();
-            services.AddScoped<IPasswordCheckerService>();
+            //services.AddScoped<IPasswordCheckerService>();
+            services.AddTransient<IPasswordCheckerService, PasswordCheckerService>();
+
+#if DEBUG
+            /* Settings for Swagger start */
+            // Register the Swagger generator, defining one or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "My API", Version = "v1" });
+            });
+
+            /* Settting for Swagger end */
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +61,19 @@ namespace PasswordChecker
             {
                 endpoints.MapControllers();
             });
+
+#if DEBUG
+            /* Setting for Swagger start */
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/Swagger/v1/swagger.json", "My API V1");
+            });
+            /* Setting for Swagger end */
+#endif
         }
     }
 }

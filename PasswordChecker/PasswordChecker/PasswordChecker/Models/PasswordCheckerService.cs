@@ -5,6 +5,7 @@ namespace PasswordChecker.Models
 {
     public class PasswordCheckerService : IPasswordCheckerService
     {
+        const string _Symbols = "~!@#$%^&*()_-+=|\\}{][;:/?><";
         public PasswordCheckResult CheckPassword(string password)
         {
             PasswordCheckResult passwordCheckResult = new PasswordCheckResult();
@@ -41,7 +42,7 @@ namespace PasswordChecker.Models
             passwordCheckResult.PasswordStrength = PasswordStrength.VeryWeak;
 
             //if we have a special character used then it gets to the next level
-            if (password.Any(char.IsSymbol))
+            if (password.Any(c=> _Symbols.Contains(c)))
                 passwordCheckResult.PasswordStrength++;
 
             // if it has more characters than minimum and less than Upper limit then that takes it to the next rank

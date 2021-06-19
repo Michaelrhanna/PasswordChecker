@@ -23,6 +23,7 @@ namespace PasswordChecker.Controllers
             return View();
         }
 
+        [Route("/CheckPassword")]
         [HttpGet]
         public PasswordCheckResult CheckPassword(string password)
         {
