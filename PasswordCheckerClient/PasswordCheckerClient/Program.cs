@@ -18,8 +18,18 @@ namespace PasswordCheckerClient
         {
             APIApi api = new APIApi();
             api.Configuration.BasePath = url;
+            try
+            {
+                var result = api.TestConncetionGetWithHttpInfo();
+                if (result.StatusCode == 200)
+                    Console.WriteLine(result.Data);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
 
-            api.TestConncetionGet();
         }
     }
 }
