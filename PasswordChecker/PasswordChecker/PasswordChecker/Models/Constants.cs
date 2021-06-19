@@ -15,11 +15,7 @@ namespace PasswordChecker.Models
             Medium = 3,
             Strong = 4
         }
-        public static string PASSWORD_RESULT_NOT_COMPLY = "Password doesn't comply with the requirements";
-        public static string PASSWORD_RESULT_VERY_WEAK = "Very Weak";
-        public static string PASSWORD_RESULT_WEAK = "Weak";
-        public static string PASSWORD_RESULT_MEDIUM = "Medium";
-        public static string PASSWORD_RESULT_STRONG = "Strong";
+       
 
         public static string MESSAGE_SHORT_PASSWORD = "Password can't be less than {0} charecters";
         public static string MESSAGE_NO_CAPITAL_LETTERS = "Password must contain at least 1 captical letter";
