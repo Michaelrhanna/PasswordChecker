@@ -45,7 +45,7 @@ namespace PasswordChecker.Models
                 passwordCheckResult.PasswordStrength++;
 
             // if it has more characters than minimum and less than Upper limit then that takes it to the next rank
-            if(password.Length >= MINIMUM_LENGTH && password.Length <= UPPER_LENGTH_LIMIT )
+            if(password.Length >= MINIMUM_LENGTH )
                 passwordCheckResult.PasswordStrength++;
 
             // if password has more than the upper limit of characters then it is taken another level up
