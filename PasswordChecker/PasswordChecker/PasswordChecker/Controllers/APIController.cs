@@ -39,5 +39,12 @@ namespace PasswordChecker.Controllers
             return passwordCheckResult;
 
         }
+
+        [Route("/TestConncetion")]
+        [HttpGet]
+        public IActionResult TestConncetion()
+        {
+            return new OkObjectResult("Conncetion to API was successfull");
+        }
     }
 }
