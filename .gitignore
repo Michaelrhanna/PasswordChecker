@@ -15,3 +15,6 @@
 /PasswordCheckerClient/PasswordCheckerClient/bin/Debug/netcoreapp3.1
 /PasswordCheckerClient/.vs/PasswordCheckerClient/config
 /PasswordCheckerClient/PasswordCheckerClient/bin/Release/netcoreapp3.1
+/PasswordCheckerClient/.vs/PasswordCheckerClient/DesignTimeBuild/.dtbcache.v2
+/PasswordChecker/PasswordChecker/PasswordChecker.Test/obj
+/PasswordChecker/PasswordChecker/PasswordChecker.Test/bin/Debug/netcoreapp3.1
