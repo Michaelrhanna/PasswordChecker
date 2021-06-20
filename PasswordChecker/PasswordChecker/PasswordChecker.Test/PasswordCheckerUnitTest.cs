@@ -104,5 +104,13 @@ namespace PasswordChecker.Test
             var result = apiService.CheckPassword("Pa$$w0rd1");
             Assert.AreEqual(result, new PasswordCheckResult() { PasswordStrength = Constants.PasswordStrength.Strong, Message = string.Empty, BreachCount = 327 });
         }
+        [TestMethod]
+        public void TestNullPassword()
+        {
+            var apiService = new PasswordCheckerService();
+            var result = apiService.CheckPassword(null);
+            Assert.AreEqual(result, new PasswordCheckResult() { PasswordStrength = Constants.PasswordStrength.NoComply, Message = string.Format(Constants.MESSAGE_SHORT_PASSWORD, Constants.MINIMUM_LENGTH), BreachCount = 0 });
+        }
+
     }
 }
