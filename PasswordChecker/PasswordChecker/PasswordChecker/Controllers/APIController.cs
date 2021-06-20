@@ -44,7 +44,7 @@ namespace PasswordChecker.Controllers
         [HttpGet]
         public IActionResult TestConncetion()
         {
-            return new OkObjectResult(string.Format("Conncetion to API was successfull"));
+            return new OkObjectResult(string.Format("Connection to API was successfull"));
         }
     }
 }

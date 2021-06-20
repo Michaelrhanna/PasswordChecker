@@ -17,7 +17,7 @@ namespace PasswordChecker.Models
         }
        
 
-        public static string MESSAGE_SHORT_PASSWORD = "Password can't be less than {0} charecters";
+        public static string MESSAGE_SHORT_PASSWORD = "Password can not be less than {0} characters";
         public static string MESSAGE_NO_CAPITAL_LETTERS = "Password must contain at least 1 captical letter";
         public static string MESSAGE_NO_SMALL_LETTERS = "Password must contain at least 1 small letter";
         public static string MESSAGE_NO_NUMBER = "Password must contain at least 1 number";

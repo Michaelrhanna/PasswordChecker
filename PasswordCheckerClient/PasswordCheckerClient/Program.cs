@@ -6,7 +6,7 @@ namespace PasswordCheckerClient
 {
     class Program
     {
-        public static string PASSWORD_RESULT_NOT_COMPLY = "Password doesn't comply with the requirements";
+        public static string PASSWORD_RESULT_NOT_COMPLY = "Password does not comply with the requirements";
         public static string PASSWORD_RESULT_VERY_WEAK = "Very Weak";
         public static string PASSWORD_RESULT_WEAK = "Weak";
         public static string PASSWORD_RESULT_MEDIUM = "Medium";
@@ -107,9 +107,11 @@ namespace PasswordCheckerClient
                 if(result.BreachCount.HasValue)
                 {
                     if ( result.BreachCount > 0)
-                        Console.WriteLine($"Password has been breached {result.BreachCount} time(s) >");
+                        Console.WriteLine($"Password was breached {result.BreachCount} time(s) >");
+                    else if(result.PasswordStrength == IO.Swagger.Model.PasswordStrength.NoComply)
+                        Console.WriteLine($"Password was not tested for breach >");
                     else
-                        Console.WriteLine($"Password has not been breached yet >");
+                        Console.WriteLine($"Password was not been breached before >");
                 }
 
             }
